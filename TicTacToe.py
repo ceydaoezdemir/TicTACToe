@@ -3,8 +3,8 @@ def main():
     intro()
     board = create_grid()
     print_board(board)
-    symbol_1, symbol_2 = sym()
-    is_full(board, symbol_1, symbol_2)
+    symbol_1, symbol_2 = ask_symb()
+
 
 
 #This function introduces the rules of the game Tic Tac Toe
@@ -23,12 +23,12 @@ def create_grid():
     return board
 
 
-
-def sym():
+#ask player which symbol, he /she wants to be
+def ask_symb():
     symbol_1 = input("Player 1, do you want to be X or O? ")
     symbol_2 = "O" if symbol_1 == "X" else "X"
     print(f"Player 2, you are {symbol_2}.")
-    input("Press enter to continue.\n")
+    input("Press enter to continue." + "\n")
     return symbol_1, symbol_2
 
 
@@ -92,5 +92,6 @@ def is_winner(board, player):
         return True
     return False
     
+
 # Call Main
 main()
